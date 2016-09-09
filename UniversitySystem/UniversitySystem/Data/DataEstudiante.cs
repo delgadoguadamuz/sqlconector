@@ -22,13 +22,7 @@ namespace UniversitySystem.Data
         public DataEstudiante()
         {
             
-            //table = new DataTable();
-            //table.Columns.Add("Id");
-            //table.Columns.Add("Carnet");
-            //table.Columns.Add("Nombre");
-            //table.Columns.Add("Apellido");
-            //table.Columns.Add("Edad");
-            //table.Columns.Add("Sexo");
+           
         }
 
 
