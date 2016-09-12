@@ -49,7 +49,11 @@ namespace UniversitySystem.Views
                 row["Edad"] = student.Id;
                 row["Sexo"] = student.Id;
 
+                table.Rows.Add(row);
+
             }
+
+            
 
         }
 
