@@ -29,7 +29,7 @@ namespace UniversitySystem.Data
         public List<Estudiante> ObtenerTodos()
         {
             list = new List<Estudiante>();
-            string query = "SELECT * FROM [Estuduante]";
+            string query = "SELECT * FROM [Estudiante]";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query,connection);
             connection.Open();
@@ -57,8 +57,28 @@ namespace UniversitySystem.Data
             return list;
         }
 
+        public void Insertar(Estudiante student)
+        {
+            String query = "INSERT INTO[Estudiante](Carnet,Nombre,Apellido,Edad,Sexo)" + 
+                            "VALUES(@carnet,@nombre,@apellido,@edad,@sexo)";
 
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
 
+            command.Parameters.AddWithValue("@carnet", student.Carnet);
+            command.Parameters.AddWithValue("@nombre", student.Nombre);
+            command.Parameters.AddWithValue("@apellido", student.Apellido);
+            command.Parameters.AddWithValue("@edad", student.Edad);
+            command.Parameters.AddWithValue("@sexo", student.Sexo);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+        }
+        
     }
 
 

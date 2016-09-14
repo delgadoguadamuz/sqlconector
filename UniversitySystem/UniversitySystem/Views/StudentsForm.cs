@@ -30,6 +30,9 @@ namespace UniversitySystem.Views
             table.Columns.Add("Apellido");
             table.Columns.Add("Edad");
             table.Columns.Add("Sexo");
+
+            data = new DataEstudiante();
+            LoadTable();
         }
 
         public void LoadTable()
@@ -43,20 +46,28 @@ namespace UniversitySystem.Views
                 DataRow row = table.NewRow();
 
                 row["Id"] = student.Id;
-                row["Nombre"] = student.Id;
-                row["Apellido"] = student.Id;
-                row["Carnet"] = student.Id;
-                row["Edad"] = student.Id;
-                row["Sexo"] = student.Id;
+                row["Nombre"] = student.Nombre;
+                row["Apellido"] = student.Apellido;
+                row["Carnet"] = student.Carnet;
+                row["Edad"] = student.Edad;
+                row["Sexo"] = student.Sexo;
 
                 table.Rows.Add(row);
 
+               
+
             }
 
-            
+            dgwStudents.DataSource = table;
 
         }
 
+        public void AddStudents(Estudiante student)
+        {
+
+            data.Insertar(student);
+
+        }
 
 
         private void StudentsForm_Load(object sender, EventArgs e)
@@ -65,6 +76,13 @@ namespace UniversitySystem.Views
             
                 
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AddStudent addForm = new AddStudent();
+
+            addForm.ShowDialog(this);
         }
     }
 }
