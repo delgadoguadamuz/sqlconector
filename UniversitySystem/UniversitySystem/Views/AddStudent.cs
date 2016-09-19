@@ -43,5 +43,10 @@ namespace UniversitySystem.Views
             this.Close();
             
         }
+
+        private void tbxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

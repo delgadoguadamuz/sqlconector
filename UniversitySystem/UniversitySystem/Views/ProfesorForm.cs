@@ -58,5 +58,16 @@ namespace UniversitySystem.Views
 
             dgvProfesor.DataSource = table;
         }
+
+
+        public void AddProfesor(Profesor profesor)
+        {
+
+            data.Insertar(profesor);
+
+        }
+
+
+
     }
 }

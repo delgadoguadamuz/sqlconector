@@ -55,7 +55,32 @@ namespace UniversitySystem.Data
             connection.Close();
 
             return list;
+
         }
+
+        public void Insertar(Profesor profesor)
+        {
+            String query = "INSERT INTO[Estudiante](Titulo,Nombre,Apellido,Edad,Sexo)" +
+                            "VALUES(@titulo,@nombre,@apellido,@edad,@sexo)";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@titulo", profesor.Titulo);
+            command.Parameters.AddWithValue("@nombre", profesor.Nombre);
+            command.Parameters.AddWithValue("@apellido", profesor.Apellido);
+            command.Parameters.AddWithValue("@edad", profesor.Edad);
+            command.Parameters.AddWithValue("@sexo", profesor.Sexo);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+        }
+
+
     }
 
 }
