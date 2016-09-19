@@ -33,7 +33,7 @@ namespace UniversitySystem.Views
             profesor.Edad = Convert.ToInt32(tbxEdad.Text);
             profesor.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
 
-            StudentsForm owner = (StudentsForm)this.Owner;
+            ProfesorForm owner = (ProfesorForm)this.Owner;
             owner.AddProfesor(profesor);
 
             this.Close();

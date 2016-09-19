@@ -44,34 +44,34 @@
             // tbxNombre
             // 
             this.tbxNombre.Location = new System.Drawing.Point(16, 52);
-            this.tbxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(199, 22);
+            this.tbxNombre.Size = new System.Drawing.Size(228, 22);
             this.tbxNombre.TabIndex = 0;
             this.tbxNombre.TextChanged += new System.EventHandler(this.tbxNombre_TextChanged);
             // 
             // tbxApellido
             // 
             this.tbxApellido.Location = new System.Drawing.Point(16, 100);
-            this.tbxApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxApellido.Margin = new System.Windows.Forms.Padding(4);
             this.tbxApellido.Name = "tbxApellido";
-            this.tbxApellido.Size = new System.Drawing.Size(199, 22);
+            this.tbxApellido.Size = new System.Drawing.Size(228, 22);
             this.tbxApellido.TabIndex = 1;
             // 
             // tbxEdad
             // 
             this.tbxEdad.Location = new System.Drawing.Point(16, 148);
-            this.tbxEdad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxEdad.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEdad.Name = "tbxEdad";
-            this.tbxEdad.Size = new System.Drawing.Size(199, 22);
+            this.tbxEdad.Size = new System.Drawing.Size(228, 22);
             this.tbxEdad.TabIndex = 2;
             // 
             // tbxCarnet
             // 
             this.tbxCarnet.Location = new System.Drawing.Point(16, 255);
-            this.tbxCarnet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxCarnet.Margin = new System.Windows.Forms.Padding(4);
             this.tbxCarnet.Name = "tbxCarnet";
-            this.tbxCarnet.Size = new System.Drawing.Size(199, 22);
+            this.tbxCarnet.Size = new System.Drawing.Size(228, 22);
             this.tbxCarnet.TabIndex = 4;
             // 
             // label1
@@ -127,8 +127,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(236, 148);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(55, 297);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 28);
             this.btnGuardar.TabIndex = 10;
@@ -143,16 +143,16 @@
             "Masculino",
             "Femenino"});
             this.cbxSexo.Location = new System.Drawing.Point(16, 196);
-            this.cbxSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxSexo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSexo.Name = "cbxSexo";
-            this.cbxSexo.Size = new System.Drawing.Size(199, 24);
+            this.cbxSexo.Size = new System.Drawing.Size(228, 24);
             this.cbxSexo.TabIndex = 11;
             // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 350);
+            this.ClientSize = new System.Drawing.Size(266, 366);
             this.Controls.Add(this.cbxSexo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label5);
@@ -164,7 +164,7 @@
             this.Controls.Add(this.tbxEdad);
             this.Controls.Add(this.tbxApellido);
             this.Controls.Add(this.tbxNombre);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddStudent";
             this.Text = "Agregar Estudiantes";
             this.Load += new System.EventHandler(this.AddStudent_Load);
