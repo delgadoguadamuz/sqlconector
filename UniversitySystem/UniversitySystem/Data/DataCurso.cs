@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,7 @@ namespace UniversitySystem.Data
     class DataCurso
     {
 
-        private string connectionString =
-               "Data Source=TLCOYO-LOANER7\\SQLEXPRESS;Initial Catalog=Universidad;"
-               + "Integrated Security=true";
+        private string connectionString = Properties.Settings.Default.ConnectionString;
 
 
 
@@ -41,12 +40,12 @@ namespace UniversitySystem.Data
 
                 Curso curso = new Curso();
 
-                estudiante.Id = (int)reader["Id"];
-                estudiante.Nombre = (string)reader["Nombre"];
-                estudiante.Apellido = (string)reader["Apellido"];
-                estudiante.Carnet = (string)reader["Carnet"];
-                estudiante.Edad = (int)reader["Edad"];
-                estudiante.Sexo = (string)reader["Sexo"];
+
+                curso.Nombre = (string)reader["Nombre"];
+                curso.Sigla = (string)reader["Sigla"];
+                curso.IdProfesor = (int)reader["IdProfesor"];
+                curso.CupoMax = (int)reader["CupoMax"];
+
 
                 list.Add(curso);
             }
@@ -59,17 +58,16 @@ namespace UniversitySystem.Data
 
         public void Insertar(Curso curso)
         {
-            String query = "INSERT INTO[Curso](Carnet,Nombre,Apellido,Edad,Sexo)" +
-                            "VALUES(@carnet,@nombre,@apellido,@edad,@sexo)";
+            String query = "INSERT INTO[Curso](IdProfesor,Nombre,Sigla,CupoMax)" +
+                            "VALUES(@idprofesor,@nombre,@sigla,@cupomax)";
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@carnet", student.Carnet);
-            command.Parameters.AddWithValue("@nombre", student.Nombre);
-            command.Parameters.AddWithValue("@apellido", student.Apellido);
-            command.Parameters.AddWithValue("@edad", student.Edad);
-            command.Parameters.AddWithValue("@sexo", student.Sexo);
+            command.Parameters.AddWithValue("@nombre", curso.Nombre);
+            command.Parameters.AddWithValue("@sigla", curso.Sigla);
+            command.Parameters.AddWithValue("@cupomax", curso.CupoMax);
+            command.Parameters.AddWithValue("@idprofesor", curso.IdProfesor);
 
             connection.Open();
 
@@ -80,3 +78,4 @@ namespace UniversitySystem.Data
 
         }
     }
+}

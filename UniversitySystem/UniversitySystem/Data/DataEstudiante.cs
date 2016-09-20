@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using UniversitySystem.Entities;
+using System.Configuration;
 
 namespace UniversitySystem.Data
 {
   public class DataEstudiante
     {
-       private string connectionString =
-                "Data Source=TLCOYO-LOANER7\\SQLEXPRESS;Initial Catalog=Universidad;"
-                + "Integrated Security=true";
+        private string connectionString = Properties.Settings.Default.ConnectionString;              
+
 
 
 
         private List<Estudiante> list;
+
+        public static object ConfigurationSetting { get; private set; }
 
         public DataEstudiante()
         {
@@ -59,8 +61,7 @@ namespace UniversitySystem.Data
 
         public void Insertar(Estudiante student)
         {
-            String query = "INSERT INTO[Estudiante](Carnet,Nombre,Apellido,Edad,Sexo)" + 
-                            "VALUES(@carnet,@nombre,@apellido,@edad,@sexo)";
+            String query = "INSERT INTO[Estudiante](Carnet,Nombre,Apellido,Edad,Sexo)" + "VALUES(@carnet,@nombre,@apellido,@edad,@sexo)";
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, connection);
