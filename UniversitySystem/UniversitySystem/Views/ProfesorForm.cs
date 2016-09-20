@@ -67,7 +67,11 @@ namespace UniversitySystem.Views
 
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AddProfesor addForm = new AddProfesor();
 
-
+            addForm.ShowDialog(this);
+        }
     }
 }

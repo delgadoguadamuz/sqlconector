@@ -19,6 +19,7 @@ namespace UniversitySystem
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StudentsForm());
             Application.Run(new ProfesorForm());
+            
         }
     }
 }

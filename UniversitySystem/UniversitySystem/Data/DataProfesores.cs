@@ -60,7 +60,7 @@ namespace UniversitySystem.Data
 
         public void Insertar(Profesor profesor)
         {
-            String query = "INSERT INTO[Estudiante](Titulo,Nombre,Apellido,Edad,Sexo)" +
+            String query = "INSERT INTO[Profesor](Titulo,Nombre,Apellido,Edad,Sexo)" +
                             "VALUES(@titulo,@nombre,@apellido,@edad,@sexo)";
 
             SqlConnection connection = new SqlConnection(connectionString);

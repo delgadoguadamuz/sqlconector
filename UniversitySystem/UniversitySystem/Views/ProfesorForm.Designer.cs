@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvProfesor = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,22 @@
             this.dgvProfesor.Size = new System.Drawing.Size(523, 233);
             this.dgvProfesor.TabIndex = 0;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(248, 32);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // ProfesorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 323);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProfesor);
             this.Name = "ProfesorForm";
             this.Text = "ProfesorForm";
@@ -59,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProfesor;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

@@ -37,8 +37,9 @@ namespace UniversitySystem.Views
 
         public void LoadTable()
         {
+            table.Clear();
 
-          List<Estudiante> students = data.ObtenerTodos();
+            List<Estudiante> students = data.ObtenerTodos();
 
             foreach(Estudiante student in students)
             {
@@ -66,7 +67,7 @@ namespace UniversitySystem.Views
         {
 
             data.Insertar(student);
-
+            LoadTable();
         }
 
 
