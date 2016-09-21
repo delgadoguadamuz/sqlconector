@@ -90,7 +90,7 @@ namespace UniversitySystem.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AddStudent addForm = new AddStudent();
+            AddStudent addForm = new AddStudent(null);
 
             addForm.ShowDialog(this);
         }
@@ -103,6 +103,18 @@ namespace UniversitySystem.Views
                 DataGridViewSelectedRowCollection rows = dgwStudents.SelectedRows;
 
                 DataGridViewRow row = rows[0];
+
+                Estudiante student = new Estudiante();
+                student.Id = Convert.ToInt32(row.Cells["id"].Value);
+                student.Nombre = (String)row.Cells["nombre"].Value;
+                student.Carnet = (String)row.Cells["carnet"].Value;
+                student.Apellido = (String)row.Cells["apellido"].Value;
+                student.Edad = Convert.ToInt32(row.Cells["edad"].Value);
+                student.Sexo = (string)row.Cells["sexo"].Value;
+
+                AddStudent addForm = new AddStudent(student);
+                addForm.ShowDialog(this);
+
 
             }
         }

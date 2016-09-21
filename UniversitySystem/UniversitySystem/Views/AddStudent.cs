@@ -16,12 +16,39 @@ namespace UniversitySystem.Views
 
         private Estudiante student;
 
+        public AddStudent()
+        {
+            student = new Estudiante();
+
+        }
 
         public AddStudent(Estudiante student)
         {
 
             this.student = student;
+
             InitializeComponent();
+
+            tbxNombre.Text = student.Nombre;
+            tbxApellido.Text = student.Apellido;
+            tbxCarnet.Text = student.Carnet;
+            tbxEdad.Text = student.Edad.ToString();
+            cbxSexo.Text = student.Sexo;
+
+            if (student.Sexo == "M")
+            {
+
+                cbxSexo.Text = "Masculino";
+
+            }
+            if (student.Sexo == "F") {
+
+                cbxSexo.Text = "Femenino";
+
+            }
+
+
+            
         }
 
         private void AddStudent_Load(object sender, EventArgs e)
@@ -38,16 +65,28 @@ namespace UniversitySystem.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Estudiante student = new Estudiante();
-            student.Carnet = tbxCarnet.Text;
-            student.Nombre = tbxNombre.Text;
-            student.Apellido = tbxApellido.Text;
-            student.Edad = Convert.ToInt32(tbxEdad.Text);
-            student.Sexo = ((String)cbxSexo.SelectedItem).Substring(0,1);
+            if (student.Id > 0)
+            {
+                student.Carnet = tbxCarnet.Text;
+                student.Nombre = tbxNombre.Text;
+                student.Apellido = tbxApellido.Text;
+                student.Edad = Convert.ToInt32(tbxEdad.Text);
+                student.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
+                StudentsForm owner = (StudentsForm)this.Owner;
+                owner.EditStudents(student);
+            }
+            else
+            {
+                student = new Estudiante();
+                student.Carnet = tbxCarnet.Text;
+                student.Nombre = tbxNombre.Text;
+                student.Apellido = tbxApellido.Text;
+                student.Edad = Convert.ToInt32(tbxEdad.Text);
+                student.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
 
-            StudentsForm owner = (StudentsForm)this.Owner;
-            owner.AddStudents(student);
-
+                StudentsForm owner = (StudentsForm)this.Owner;
+                owner.AddStudents(student);
+            }
             this.Close();
             
         }

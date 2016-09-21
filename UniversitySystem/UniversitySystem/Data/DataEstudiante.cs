@@ -84,7 +84,7 @@ namespace UniversitySystem.Data
         public void Actualizar(Estudiante student)
 
         {
-            String query = "UPDATE[Estudiante] SET Carnet=@carnet,Nombre=@nombre,Apellido=@apellido,Edad=@edad,Sexo=@sexo ID=@id";
+            String query = "UPDATE [Estudiante] SET Carnet=@carnet,Nombre=@nombre,Apellido=@apellido,Edad=@edad,Sexo=@sexo WHERE Id=@id";
 
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, connection);
