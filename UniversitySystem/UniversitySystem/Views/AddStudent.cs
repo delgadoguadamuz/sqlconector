@@ -13,8 +13,14 @@ namespace UniversitySystem.Views
 {
     public partial class AddStudent : Form
     {
-        public AddStudent()
+
+        private Estudiante student;
+
+
+        public AddStudent(Estudiante student)
         {
+
+            this.student = student;
             InitializeComponent();
         }
 
@@ -27,6 +33,8 @@ namespace UniversitySystem.Views
         {
 
         }
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

@@ -79,7 +79,56 @@ namespace UniversitySystem.Data
             connection.Close();
 
         }
-        
+
+
+        public void Actualizar(Estudiante student)
+
+        {
+            String query = "UPDATE[Estudiante] SET Carnet=@carnet,Nombre=@nombre,Apellido=@apellido,Edad=@edad,Sexo=@sexo ID=@id";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@carnet", student.Carnet);
+            command.Parameters.AddWithValue("@nombre", student.Nombre);
+            command.Parameters.AddWithValue("@apellido", student.Apellido);
+            command.Parameters.AddWithValue("@edad", student.Edad);
+            command.Parameters.AddWithValue("@sexo", student.Sexo);
+            command.Parameters.AddWithValue("@id", student.Id);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+
+
+        }
+
+
+        public void Eliminar(int id)
+        {
+
+            string query = "DELETE FROM [Estudiante] WHERE id=@id";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("id", id);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+
+
+
+        }
+
+
     }
 
 

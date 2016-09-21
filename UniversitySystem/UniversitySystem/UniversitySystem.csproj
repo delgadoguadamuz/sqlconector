@@ -67,7 +67,6 @@
     <Compile Include="Views\AddStudent.Designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\DataEsdiantes.cs" />
     <Compile Include="Views\ProfesorForm.cs">
       <SubType>Form</SubType>
     </Compile>

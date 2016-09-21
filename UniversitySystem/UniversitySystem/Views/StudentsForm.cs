@@ -79,11 +79,32 @@ namespace UniversitySystem.Views
 
         }
 
+        public void EditStudents(Estudiante student)
+        {
+
+            data.Actualizar(student);
+            LoadTable();
+
+
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AddStudent addForm = new AddStudent();
 
             addForm.ShowDialog(this);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (dgwStudents.SelectedRows.Count > 0)
+            {
+
+                DataGridViewSelectedRowCollection rows = dgwStudents.SelectedRows;
+
+                DataGridViewRow row = rows[0];
+
+            }
         }
     }
 }
