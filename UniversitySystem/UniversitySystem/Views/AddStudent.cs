@@ -20,6 +20,8 @@ namespace UniversitySystem.Views
         {
             student = new Estudiante();
 
+            InitializeComponent();
+
         }
 
         public AddStudent(Estudiante student)
@@ -33,7 +35,7 @@ namespace UniversitySystem.Views
             tbxApellido.Text = student.Apellido;
             tbxCarnet.Text = student.Carnet;
             tbxEdad.Text = student.Edad.ToString();
-            cbxSexo.Text = student.Sexo;
+            
 
             if (student.Sexo == "M")
             {
