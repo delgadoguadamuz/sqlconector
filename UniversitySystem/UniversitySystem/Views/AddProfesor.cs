@@ -59,16 +59,29 @@ namespace UniversitySystem.Views
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            Profesor profesor = new Profesor();
-            profesor.Titulo = tbxTitulo.Text;
-            profesor.Nombre = tbxNombre.Text;
-            profesor.Apellido = tbxApellido.Text;
-            profesor.Edad = Convert.ToInt32(tbxEdad.Text);
-            profesor.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
+            if (profesor.Id > 0)
+            {
+                profesor.Titulo = tbxTitulo.Text;
+                profesor.Nombre = tbxNombre.Text;
+                profesor.Apellido = tbxApellido.Text;
+                profesor.Edad = Convert.ToInt32(tbxEdad.Text);
+                profesor.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
 
-            ProfesorForm owner = (ProfesorForm)this.Owner;
-            owner.AddProfesor(profesor);
+                ProfesorForm owner = (ProfesorForm)this.Owner;
+                owner.EditProfesor(profesor);
+            }
+            else
+            {
+                profesor = new Profesor();
+                profesor.Titulo = tbxTitulo.Text;
+                profesor.Nombre = tbxNombre.Text;
+                profesor.Apellido = tbxApellido.Text;
+                profesor.Edad = Convert.ToInt32(tbxEdad.Text);
+                profesor.Sexo = ((String)cbxSexo.SelectedItem).Substring(0, 1);
 
+                ProfesorForm owner = (ProfesorForm)this.Owner;
+                owner.AddProfesor(profesor);
+            }
             this.Close();
 
 

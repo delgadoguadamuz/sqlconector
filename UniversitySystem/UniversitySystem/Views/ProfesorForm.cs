@@ -35,6 +35,7 @@ namespace UniversitySystem.Views
 
         public void LoadTable()
         {
+            table.Clear();
 
             List<Profesor> profesor = data.ObtenerTodosProfesor();
 
@@ -75,6 +76,15 @@ namespace UniversitySystem.Views
             addForm.ShowDialog(this);
         }
 
+        public void EditProfesor(Profesor profesor)
+        {
+
+            data.Actualizar(profesor);
+            LoadTable();
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (dgvProfesor.SelectedRows.Count > 0)
@@ -87,7 +97,7 @@ namespace UniversitySystem.Views
                 Profesor profesor = new Profesor();
                 profesor.Id = Convert.ToInt32(row.Cells["id"].Value);
                 profesor.Nombre = (String)row.Cells["nombre"].Value;
-                profesor.Titulo = (String)row.Cells["carnet"].Value;
+                profesor.Titulo = (String)row.Cells["titulo"].Value;
                 profesor.Apellido = (String)row.Cells["apellido"].Value;
                 profesor.Edad = Convert.ToInt32(row.Cells["edad"].Value);
                 profesor.Sexo = (string)row.Cells["sexo"].Value;
@@ -108,7 +118,7 @@ namespace UniversitySystem.Views
             Profesor profesor = new Profesor();
             profesor.Id = Convert.ToInt32(row.Cells["id"].Value);
 
-            DataEstudiante data = new DataEstudiante();
+            DataProfesores data = new DataProfesores();
 
             data.Eliminar(profesor.Id);
 
