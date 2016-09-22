@@ -64,6 +64,7 @@ namespace UniversitySystem.Views
         {
 
             data.Insertar(profesor);
+            LoadTable();
 
         }
 
@@ -72,6 +73,46 @@ namespace UniversitySystem.Views
             AddProfesor addForm = new AddProfesor();
 
             addForm.ShowDialog(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvProfesor.SelectedRows.Count > 0)
+            {
+
+                DataGridViewSelectedRowCollection rows = dgvProfesor.SelectedRows;
+
+                DataGridViewRow row = rows[0];
+
+                Profesor profesor = new Profesor();
+                profesor.Id = Convert.ToInt32(row.Cells["id"].Value);
+                profesor.Nombre = (String)row.Cells["nombre"].Value;
+                profesor.Titulo = (String)row.Cells["carnet"].Value;
+                profesor.Apellido = (String)row.Cells["apellido"].Value;
+                profesor.Edad = Convert.ToInt32(row.Cells["edad"].Value);
+                profesor.Sexo = (string)row.Cells["sexo"].Value;
+
+                AddProfesor addForm = new AddProfesor(profesor);
+                addForm.ShowDialog(this);
+
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewSelectedRowCollection rows = dgvProfesor.SelectedRows;
+
+            DataGridViewRow row = rows[0];
+            Profesor profesor = new Profesor();
+            profesor.Id = Convert.ToInt32(row.Cells["id"].Value);
+
+            DataEstudiante data = new DataEstudiante();
+
+            data.Eliminar(profesor.Id);
+
+            LoadTable();
         }
     }
 }

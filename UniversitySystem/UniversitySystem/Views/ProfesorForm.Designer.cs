@@ -30,6 +30,8 @@
         {
             this.dgvProfesor = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,19 +48,41 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(248, 32);
+            this.btnAgregar.Location = new System.Drawing.Point(28, 29);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(128, 23);
             this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar Profesores";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(180, 29);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(128, 23);
+            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(337, 29);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(128, 23);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // ProfesorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 323);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProfesor);
             this.Name = "ProfesorForm";
@@ -72,5 +96,7 @@
 
         private System.Windows.Forms.DataGridView dgvProfesor;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -13,9 +13,42 @@ namespace UniversitySystem.Views
 {
     public partial class AddProfesor : Form
     {
+        private Profesor profesor;
+
         public AddProfesor()
         {
+            profesor = new Profesor();
             InitializeComponent();
+        }
+
+        public AddProfesor(Profesor profesor)
+        {
+
+            this.profesor = profesor;
+
+            InitializeComponent();
+
+            tbxNombre.Text = profesor.Nombre;
+            tbxApellido.Text = profesor.Apellido;
+            tbxTitulo.Text = profesor.Titulo;
+            tbxEdad.Text = profesor.Edad.ToString();
+
+
+            if (profesor.Sexo == "M")
+            {
+
+                cbxSexo.Text = "Masculino";
+
+            }
+            if (profesor.Sexo == "F")
+            {
+
+                cbxSexo.Text = "Femenino";
+
+            }
+
+
+
         }
 
         private void AddProfesor_Load(object sender, EventArgs e)

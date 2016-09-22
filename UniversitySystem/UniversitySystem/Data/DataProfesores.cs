@@ -79,6 +79,53 @@ namespace UniversitySystem.Data
 
         }
 
+        public void Actualizar(Profesor profesor)
+
+        {
+            String query = "UPDATE [Profesor] SET Titulo=@titulo,Nombre=@nombre,Apellido=@apellido,Edad=@edad,Sexo=@sexo WHERE Id=@id";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@titulo", profesor.Titulo);
+            command.Parameters.AddWithValue("@nombre", profesor.Nombre);
+            command.Parameters.AddWithValue("@apellido", profesor.Apellido);
+            command.Parameters.AddWithValue("@edad", profesor.Edad);
+            command.Parameters.AddWithValue("@sexo", profesor.Sexo);
+            command.Parameters.AddWithValue("@id", profesor.Id);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+
+
+        }
+
+
+        public void Eliminar(int id)
+        {
+
+            string query = "DELETE FROM [Profesor] WHERE id=@id";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("id", id);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+
+
+
+        }
+
 
     }
 
